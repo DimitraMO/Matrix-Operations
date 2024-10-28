@@ -1,0 +1,29 @@
+//Less element in a 1D matrix 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define N 10
+
+int main() {
+    int A[N];
+    int i;
+    int position=0;
+    
+    //elements insertion
+    srand(time(NULL));
+    for (i=0; i<N; i++)
+        A[i] = rand() % 1000;
+    
+   //find minimum element 
+    for (i=1; i<N; i++)
+        if (A[i] < A[position])
+            position = i;
+        
+    for (i=0; i<N; i++)
+        printf("%4d", A[i]);
+    
+    printf("\n\nThe minimum is: %d", A[position]);
+    printf("\n\nIts position is: %d\n\n", position);
+    return 0;
+}
+    
